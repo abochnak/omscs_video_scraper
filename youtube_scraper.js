@@ -1,6 +1,6 @@
 //https://github.com/algolia/youtube-captions-scraper
 import { getSubtitles } from 'youtube-captions-scraper';
-import { appendFileSync } from "fs";
+import { appendFileSync, writeFileSync } from "fs";
 let vids = [
     'WxYy9A20c54',
     'wnCSVssDPv8',
@@ -81,13 +81,12 @@ async function download(ids) {
             videoID: ids[i],
             lang: 'en'
         });
-        // file will be added to this folder: youtube_scraper
-        // file name will be edtech_lecture_subs.txt
-        // putting all the captions in one file
+        writeFileSync('output/' + ids[i] + '.json', JSON.stringify(subs));
+        writeFileSync('output/' + ids[i] + '.txt', "");
         for (let i = 0; i < subs.length; i++) {
             let text = subs[i]["text"];
             text = text.split("\n").map(line => line.trim()).join(" ");
-            appendFileSync('Output.txt', text + " ");
+            appendFileSync('output/' + ids[i] + '.txt', text + " ");
         }
     }
 }
