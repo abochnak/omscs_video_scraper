@@ -1,5 +1,5 @@
 # omscs-youtube-scraper
-1. Run `node install` to install all dependencies 
+1. Run `npm install` to install all dependencies 
 2. Get the video ID from the video. In the case of a Youtube video, the ID can be found after the /watch?v= part of the URL. (ex. https://www.youtube.com/watch?v=Apmks_6b584 the video ID for this would be Apmks_6b584) 
 3. Edit the `youtube_scraper.js` file. In this file, there is a `vids` array that has a list of video IDs that can be modified.
    NOTE: If you only want to scrape one video, delete all other IDs in the array.
