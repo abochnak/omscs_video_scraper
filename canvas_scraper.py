@@ -1,11 +1,36 @@
+import os
+import sys
 import yt_dlp
 
-ydl_opts = {
-    'writeautomaticsub': True,
-    'subtitlesformat': 'srt',
-    'skip_download': True,
-    'verbose': True
-}
+def download_subtitles(link, output_dir='.', new_filename=None):
+    ydl_opts = {
+        'writesubtitles': True,
+        'subtitlesformat': 'srt',
+        'skip_download': True,
+        'outtmpl': f'{output_dir}/%(title)s.%(ext)s'
+    }
 
-with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-    ydl.download(['https://cdnapisec.kaltura.com/html5/html5lib/v2.101/mwEmbedFrame.php/p/2019031/uiconf_id/32364501/entry_id/1_dybztqe0?wid=_2019031&iframeembed=true&playerId=kaltura_player&entry_id=1_dybztqe0&flashvars[streamerType]=auto&flashvars[localizationCode]=en&flashvars[leadWithHTML5]=true&flashvars[sideBarContainer.plugin]=true&flashvars[sideBarContainer.position]=left&flashvars[sideBarContainer.clickToClose]=true&flashvars[chapters.plugin]=true&flashvars[chapters.layout]=vertical&flashvars[chapters.thumbnailRotator]=false&flashvars[streamSelector.plugin]=true&flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&flashvars[dualScreen.plugin]=true&flashvars[hotspots.plugin]=1&flashvars[Kaltura.addCrossoriginToIframe]=true&&wid=1_r3igosqj'])
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([link])
+        info_dict = ydl.extract_info(link, download=False)
+        title = info_dict.get('title', 'downloaded_subtitle').replace('/', '_')
+
+        if new_filename is None:
+            new_filename = f"{title}_subtitles.srt"
+
+        subtitle_path = f"{output_dir}/{title}.srt"
+        new_path = f"{output_dir}/{new_filename}"
+
+        if os.path.exists(subtitle_path):
+            with open(subtitle_path, 'r', encoding='utf-8') as file:
+                subtitles = file.read()
+            with open(new_path, 'w', encoding='utf-8') as new_file:
+                new_file.write(subtitles)
+            print(f"Subtitles copied to new file: {new_path}")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        video_url = sys.argv[1]
+        download_subtitles(video_url)
+    else:
+        print("Please provide a URL as an argument.")
