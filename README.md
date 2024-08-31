@@ -13,7 +13,7 @@ Copy the link from the 'View Frame' tab
 
 
 ## Youtube Scraper 
-Some of the videos for OMSCS are available on Youtube. It hasn't been tested in a while.
+Some of the videos for OMSCS are available on Youtube. 
 
 Requires Node install: https://nodejs.org/en/download/
 
@@ -23,7 +23,7 @@ Requires Node install: https://nodejs.org/en/download/
    NOTE: If you only want to scrape one video, delete all other IDs in the array.
 4. Run `node youtube_scraper.js` to run the script. The result of the script will be a file created called Output.txt  
 
-
+### Example Links to Test
 Playlist with Edtech Videos:
 https://www.youtube.com/playlist?list=PLAwxTw4SYaPnFwXQaRex_E3xjRvMcIMd1
 
