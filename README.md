@@ -1,4 +1,5 @@
 # omscs-scraper
+A web scraper to grab video transcripts from OMSCS videos!
 
 ## Kaltura (Canvas) Scraper
 Requires Python 3, Pip, and [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
