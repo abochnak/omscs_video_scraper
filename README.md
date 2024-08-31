@@ -1,4 +1,4 @@
-# omscs-youtube-scraper
+# omscs-scraper
 
 ## Kaltura (Canvas) Scraper
 Requires Python 3, Pip, and [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
@@ -12,8 +12,8 @@ Copy the link from the 'View Frame' tab
 3. Run the `srt_to_text.py` to convert the srt file to a text file. This will create a new text file.
 
 
-## Youtube Scraper for Edtech Videos
-I used this part for Edtech. It hasn't been tested in a while.
+## Youtube Scraper 
+Some of the videos for OMSCS are available on Youtube. It hasn't been tested in a while.
 
 Requires Node install: https://nodejs.org/en/download/
 
