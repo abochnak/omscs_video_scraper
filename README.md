@@ -1,5 +1,5 @@
 # omscs-scraper
-A web scraper to grab video transcripts from OMSCS videos!
+A web scraper to grab video transcripts from Georgia Tech's OMSCS videos on Canvas (Kultura) and Youtube. 
 
 ## Kaltura (Canvas) Scraper
 Requires Python 3, Pip, and [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
