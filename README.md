@@ -4,7 +4,7 @@ A web scraper to grab video transcripts from Georgia Tech's OMSCS videos on Canv
 ## Kaltura (Canvas) Scraper
 Requires Python 3, Pip, and [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
 
-1. Start playing the Kalutura video and double click to 'View Frame' (this option will not show up if the video is not playing).
+1. Start playing the Kultura video and double click to 'View Frame' (this option will not show up if the video is not playing).
 Copy the link from the 'View Frame' tab
 ![How To](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanhjdmIzN2hkcnUxenpvOW01MmZzb3owbG9kNGI2b2hkbW5waXhtcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LuO4udr9Urapu6Sy3u/giphy.gif)
 
